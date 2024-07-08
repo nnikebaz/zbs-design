@@ -950,11 +950,17 @@ textarea.form-control {
 @media screen and (max-width: 575.98px) {
   .price-section__item-text-3 {
     width: 100%;
+    margin-bottom: 2rem;
   }
 }
 
-.way-section__left-name.active {
+.way-section__left-name.active-border {
   border: 0.2rem solid #92FAE7;
+}
+@media screen and (max-width: 575.98px) {
+  .way-section__left-name.active-border {
+    border: none;
+  }
 }
 
 .way-section__right.active {

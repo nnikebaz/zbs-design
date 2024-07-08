@@ -14,8 +14,8 @@ $(document).ready(function () {
 
     const changeBorder = (btn) => {
       if (mediaQuery.big.matches) {
-        stepButtons.forEach((item) => item.classList.remove("active"));
-        btn.classList.add("active");
+        stepButtons.forEach((item) => item.classList.remove("active-border"));
+        btn.classList.add("active-border");
       }
     };
     const makeActiveContent = (btn) => {
