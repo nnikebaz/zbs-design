@@ -1,0 +1,30 @@
+.primary-button
+    display: flex
+    align-items: center
+    height: fit-content
+    font-size: clamp(1.6rem, 2vw, 1.8rem)
+    padding: 2rem 2rem
+    color: #000
+    background-color: #fff
+    border-radius: 2rem
+    transition: transform 0.2s ease-in
+    &:hover
+        transform: scale(1.03)
+
+
+.secondary-button
+    display: flex
+    align-items: center
+    height: fit-content
+    font-size: 1.6rem
+    padding: 2rem 2rem
+    color: #000
+    background-color: #fff
+    border-radius: 2rem
+    transition: transform 0.2s ease-in
+    +respond(xs)
+        width: 100%
+        justify-content: center
+    &:hover
+        transform: scale(1.03)
+    

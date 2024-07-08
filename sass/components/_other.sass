@@ -1,0 +1,17 @@
+.line
+    width: 100%
+    background-color: $color-gray
+    height: .2rem
+
+.social-icon
+    display: flex
+    gap: 2rem
+    &__item
+        height: auto
+        transition: transform 0.2s ease-in
+        +respond(xs)
+            width: 5rem
+            height: auto
+            
+        &:hover
+            transform: scale(1.03)   

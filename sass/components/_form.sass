@@ -1,0 +1,31 @@
+textarea.form-control
+    height: 100%
+
+.flex-area
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-end
+
+.form-control
+    border: none
+    padding: 2rem 4rem
+    background-color: $color-gray-form
+    font-size: 1.6rem
+    color: #fff
+    &:not(:last-child)
+        margin-bottom: 2rem
+    &:focus
+        background-color: $color-gray-form
+        color: #fff
+        border-color: $color-marine
+        box-shadow: 0 0 0 .2rem rgba(146, 250, 231)
+    &::placeholder
+        color: $color-placeholder
+
+.inputError
+    box-shadow: 0 0 0 .25rem #fe5959
+
+.error
+    font-size: 1.2rem
+    font-weight: 200
+    margin-bottom: 2rem
