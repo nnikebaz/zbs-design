@@ -18,8 +18,25 @@
     @else if $breakpoint == xl
         @media screen and ( max-width:  1399.98px)
             @content
-    
-            
-    
-            
-    
+
+@mixin fluid-text($min, $max)
+    font-size: clamp(#{$min}rem, #{calc($max / 120 * 100)}vw, #{$max}rem)
+
+@mixin flex-center($isInline: false)
+    @if $isInline
+        display: inline-flex
+    @else 
+        display: flex
+
+    justify-content: center
+    align-items: center 
+
+@mixin abs-center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+@mixin square($size)
+    width: $size
+    aspect-ratio: 1    

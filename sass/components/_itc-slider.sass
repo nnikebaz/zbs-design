@@ -161,6 +161,8 @@
 .itc-slider-2 .itc-slider
     &__wrapper
         height: 65rem
+        +respond(xs)
+            height: 80rem
     &__items
         top: 8rem
     &__item
@@ -175,6 +177,10 @@
         height: 50rem
         position: relative
         margin: 0 auto
+        +respond(xs)
+            height: 80rem
+            flex-direction: column
+            justify-content: center
 
     &__text-wrapper
         display: flex
@@ -185,6 +191,8 @@
         font-size: 16rem
         font-weight: 700
         margin-right: 4rem
+        +respond(xs)
+            display: none
 
     &__description
         font-size: 3.6rem
@@ -200,8 +208,12 @@
     &__item:nth-child(1) .itc-slider__description
         max-width: 60%
 
-    &__item:nth-child(1) .itc-slider__img
+    &__item .itc-slider__img
         position: absolute
+        +respond(xs)
+            position: unset
+
+    &__item:nth-child(1) .itc-slider__img
         max-width: 52%
         right: -15rem
 
@@ -215,7 +227,6 @@
         max-width: 52%
 
     &__item:nth-child(2) .itc-slider__img
-        position: absolute
         max-width: 45%
         right: -12rem
 
@@ -223,7 +234,6 @@
         max-width: 60%
 
     &__item:nth-child(3) .itc-slider__img
-        position: absolute
         max-width: 20%
         right: 5rem
 
@@ -237,7 +247,6 @@
         max-width: 52%
 
     &__item:nth-child(4) .itc-slider__img
-        position: absolute
         max-width: 45%
         right: -15rem
 
@@ -251,7 +260,6 @@
         max-width: 52%
 
     &__item:nth-child(5) .itc-slider__img
-        position: absolute
         max-width: 40%
         right: 0
         top: 6rem
