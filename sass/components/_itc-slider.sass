@@ -41,7 +41,7 @@
         text-align: center
         padding: 0 2rem
         transition: gap .3s ease
-        +respond(xs)
+        @include respond(xs)
             flex: 0 0 100%
             max-width: 100%
             padding: 0 4rem
@@ -128,12 +128,12 @@
 
         &_prev
             left: -4rem
-            +respond(xs)
+            @include respond(xs)
                 left: -1rem
 
         &_next
             right: -4rem
-            +respond(xs)
+            @include respond(xs)
                 right: -1rem
             
 
@@ -160,11 +160,13 @@
 
 .itc-slider-2 .itc-slider
     &__wrapper
-        height: 65rem
-        +respond(xs)
-            height: 80rem
+        height: 75rem
+        @include respond(xs)
+            height: 71.2rem
     &__items
         top: 8rem
+        @include respond(xs)
+            top: 6rem
     &__item
         flex: 0 0 100%
 
@@ -177,27 +179,35 @@
         height: 50rem
         position: relative
         margin: 0 auto
-        +respond(xs)
-            height: 80rem
+        @include respond(xs)
+            height: 65rem
             flex-direction: column
             justify-content: center
+            padding: 4rem
+            margin: 0rem 2rem
 
     &__text-wrapper
         display: flex
         align-items: center
         margin-left: 6rem
+        @include respond(xs)
+            text-align: center
+            margin-left: 0rem
 
     &__number
         font-size: 16rem
         font-weight: 700
         margin-right: 4rem
-        +respond(xs)
+        @include respond(xs)
             display: none
 
     &__description
         font-size: 3.6rem
         font-weight: 700
         line-height: 4.8rem
+        @include respond(xs)
+            font-size: 2rem
+            line-height: unset
 
     &__item:nth-child(1) .itc-slider__number
         background-image: linear-gradient(60deg, #FAD0C4 0%, #FBC2EB 100%)
@@ -205,17 +215,20 @@
         background-clip: text
         color: transparent
 
-    &__item:nth-child(1) .itc-slider__description
-        max-width: 60%
-
     &__item .itc-slider__img
         position: absolute
-        +respond(xs)
+        @include respond(xs)
             position: unset
+            order: -1
+            margin-top: 6rem
+            margin-bottom: 4rem
 
     &__item:nth-child(1) .itc-slider__img
-        max-width: 52%
+        max-width: 40%
         right: -15rem
+        +respond (xs)
+            max-width: 80%
+
 
     &__item:nth-child(2) .itc-slider__number
         background-image: linear-gradient(180deg, #91C0CC 0%, #DDE7E8 100%)
@@ -223,19 +236,23 @@
         background-clip: text
         color: transparent
 
-    &__item:nth-child(2) .itc-slider__description
-        max-width: 52%
 
     &__item:nth-child(2) .itc-slider__img
         max-width: 45%
         right: -12rem
+        @include respond(xs)
+            max-width: 110%
+            margin-bottom: 4rem
 
-    &__item:nth-child(3) .itc-slider__description
-        max-width: 60%
 
     &__item:nth-child(3) .itc-slider__img
         max-width: 20%
         right: 5rem
+        @include respond(xs)
+            max-width: 40%
+            rotate: 225deg
+            margin-bottom: 2rem
+            margin-top: 0rem
 
     &__item:nth-child(3) .itc-slider__number
         background-image: linear-gradient(180deg, #F6E6C5 0%, #ECBEB6 47%, #A5ADE2 100%)
@@ -243,12 +260,13 @@
         background-clip: text
         color: transparent
 
-    &__item:nth-child(4) .itc-slider__description
-        max-width: 52%
-
     &__item:nth-child(4) .itc-slider__img
         max-width: 45%
         right: -15rem
+        @include respond(xs)
+            max-width: 136%
+            margin-bottom: 2rem
+            margin-top: 0
 
     &__item:nth-child(4) .itc-slider__number
         background-image: linear-gradient(180deg, #FDF0C6 0%, #7F9AAC 100%)
@@ -256,13 +274,13 @@
         background-clip: text
         color: transparent
 
-    &__item:nth-child(5) .itc-slider__description
-        max-width: 52%
-
     &__item:nth-child(5) .itc-slider__img
         max-width: 40%
         right: 0
         top: 6rem
+        @include respond(xs)
+            max-width: 100%
+            margin-top: 0
 
     &__item:nth-child(5) .itc-slider__number
         background-image: linear-gradient(180deg, #FE0018 0%, #81040F 100%)
@@ -282,6 +300,8 @@
         margin: 0 15%
         padding-left: 0
         list-style: none
+        @include respond(xs)
+            top: 10rem
 
     &__indicator
         flex: 0 1 auto

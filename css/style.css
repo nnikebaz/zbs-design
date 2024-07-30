@@ -19,6 +19,14 @@ button {
   color: #000;
 }
 
+hr {
+  margin: 0;
+  color: unset;
+  border: 0;
+  border-top: unset;
+  opacity: unset;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -538,15 +546,20 @@ textarea.form-control {
   /* РёРЅРґРёРєР°С‚РѕСЂС‹ */
 }
 .itc-slider-2 .itc-slider__wrapper {
-  height: 65rem;
+  height: 75rem;
 }
 @media screen and (max-width: 575.98px) {
   .itc-slider-2 .itc-slider__wrapper {
-    height: 80rem;
+    height: 71.2rem;
   }
 }
 .itc-slider-2 .itc-slider__items {
   top: 8rem;
+}
+@media screen and (max-width: 575.98px) {
+  .itc-slider-2 .itc-slider__items {
+    top: 6rem;
+  }
 }
 .itc-slider-2 .itc-slider__item {
   flex: 0 0 100%;
@@ -563,15 +576,23 @@ textarea.form-control {
 }
 @media screen and (max-width: 575.98px) {
   .itc-slider-2 .itc-slider__card {
-    height: 80rem;
+    height: 65rem;
     flex-direction: column;
     justify-content: center;
+    padding: 4rem;
+    margin: 0rem 2rem;
   }
 }
 .itc-slider-2 .itc-slider__text-wrapper {
   display: flex;
   align-items: center;
   margin-left: 6rem;
+}
+@media screen and (max-width: 575.98px) {
+  .itc-slider-2 .itc-slider__text-wrapper {
+    text-align: center;
+    margin-left: 0rem;
+  }
 }
 .itc-slider-2 .itc-slider__number {
   font-size: 16rem;
@@ -588,14 +609,17 @@ textarea.form-control {
   font-weight: 700;
   line-height: 4.8rem;
 }
+@media screen and (max-width: 575.98px) {
+  .itc-slider-2 .itc-slider__description {
+    font-size: 2rem;
+    line-height: unset;
+  }
+}
 .itc-slider-2 .itc-slider__item:nth-child(1) .itc-slider__number {
   background-image: linear-gradient(60deg, #FAD0C4 0%, #FBC2EB 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-.itc-slider-2 .itc-slider__item:nth-child(1) .itc-slider__description {
-  max-width: 60%;
 }
 .itc-slider-2 .itc-slider__item .itc-slider__img {
   position: absolute;
@@ -603,11 +627,19 @@ textarea.form-control {
 @media screen and (max-width: 575.98px) {
   .itc-slider-2 .itc-slider__item .itc-slider__img {
     position: unset;
+    order: -1;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
   }
 }
 .itc-slider-2 .itc-slider__item:nth-child(1) .itc-slider__img {
-  max-width: 52%;
+  max-width: 40%;
   right: -15rem;
+}
+@media screen and (max-width: 575.98px) {
+  .itc-slider-2 .itc-slider__item:nth-child(1) .itc-slider__img {
+    max-width: 80%;
+  }
 }
 .itc-slider-2 .itc-slider__item:nth-child(2) .itc-slider__number {
   background-image: linear-gradient(180deg, #91C0CC 0%, #DDE7E8 100%);
@@ -615,19 +647,27 @@ textarea.form-control {
   background-clip: text;
   color: transparent;
 }
-.itc-slider-2 .itc-slider__item:nth-child(2) .itc-slider__description {
-  max-width: 52%;
-}
 .itc-slider-2 .itc-slider__item:nth-child(2) .itc-slider__img {
   max-width: 45%;
   right: -12rem;
 }
-.itc-slider-2 .itc-slider__item:nth-child(3) .itc-slider__description {
-  max-width: 60%;
+@media screen and (max-width: 575.98px) {
+  .itc-slider-2 .itc-slider__item:nth-child(2) .itc-slider__img {
+    max-width: 110%;
+    margin-bottom: 4rem;
+  }
 }
 .itc-slider-2 .itc-slider__item:nth-child(3) .itc-slider__img {
   max-width: 20%;
   right: 5rem;
+}
+@media screen and (max-width: 575.98px) {
+  .itc-slider-2 .itc-slider__item:nth-child(3) .itc-slider__img {
+    max-width: 40%;
+    rotate: 225deg;
+    margin-bottom: 2rem;
+    margin-top: 0rem;
+  }
 }
 .itc-slider-2 .itc-slider__item:nth-child(3) .itc-slider__number {
   background-image: linear-gradient(180deg, #F6E6C5 0%, #ECBEB6 47%, #A5ADE2 100%);
@@ -635,12 +675,16 @@ textarea.form-control {
   background-clip: text;
   color: transparent;
 }
-.itc-slider-2 .itc-slider__item:nth-child(4) .itc-slider__description {
-  max-width: 52%;
-}
 .itc-slider-2 .itc-slider__item:nth-child(4) .itc-slider__img {
   max-width: 45%;
   right: -15rem;
+}
+@media screen and (max-width: 575.98px) {
+  .itc-slider-2 .itc-slider__item:nth-child(4) .itc-slider__img {
+    max-width: 136%;
+    margin-bottom: 2rem;
+    margin-top: 0;
+  }
 }
 .itc-slider-2 .itc-slider__item:nth-child(4) .itc-slider__number {
   background-image: linear-gradient(180deg, #FDF0C6 0%, #7F9AAC 100%);
@@ -648,13 +692,16 @@ textarea.form-control {
   background-clip: text;
   color: transparent;
 }
-.itc-slider-2 .itc-slider__item:nth-child(5) .itc-slider__description {
-  max-width: 52%;
-}
 .itc-slider-2 .itc-slider__item:nth-child(5) .itc-slider__img {
   max-width: 40%;
   right: 0;
   top: 6rem;
+}
+@media screen and (max-width: 575.98px) {
+  .itc-slider-2 .itc-slider__item:nth-child(5) .itc-slider__img {
+    max-width: 100%;
+    margin-top: 0;
+  }
 }
 .itc-slider-2 .itc-slider__item:nth-child(5) .itc-slider__number {
   background-image: linear-gradient(180deg, #FE0018 0%, #81040F 100%);
@@ -673,6 +720,11 @@ textarea.form-control {
   margin: 0 15%;
   padding-left: 0;
   list-style: none;
+}
+@media screen and (max-width: 575.98px) {
+  .itc-slider-2 .itc-slider__indicators {
+    top: 10rem;
+  }
 }
 .itc-slider-2 .itc-slider__indicator {
   flex: 0 1 auto;
@@ -909,20 +961,46 @@ textarea.form-control {
   gap: 2rem;
   justify-content: space-between;
 }
+.price-section__item:not(:last-of-type, :first-of-type) {
+  padding: 6rem 0;
+}
+.price-section__item:first-of-type {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.price-section__item:last-of-type {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
 @media screen and (max-width: 575.98px) {
   .price-section__item {
     flex-direction: column;
   }
+  .price-section__item:not(:last-of-type, :first-of-type) {
+    padding: 3rem 0;
+  }
+  .price-section__item:first-of-type {
+    padding-top: 0rem;
+    padding-bottom: 3rem;
+  }
+  .price-section__item:last-of-type {
+    padding-top: 3rem;
+    padding-bottom: 0rem;
+  }
 }
-.price-section__item-wrapper {
+.price-section__inner {
   display: flex;
-  padding: 6rem 0;
   flex-direction: column;
 }
 @media screen and (max-width: 575.98px) {
-  .price-section__item-wrapper {
+  .price-section__inner {
     gap: 4rem;
     justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 575.98px) {
+  .price-section__line:first-child {
+    display: none;
   }
 }
 .price-section__header-name-1 {
