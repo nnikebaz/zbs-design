@@ -59,7 +59,12 @@ a {
 
 p {
   font-size: 1.8rem;
-  font-weight: 200;
+  font-weight: 300;
+}
+
+a, li, ol {
+  font-size: 1.8rem;
+  font-weight: 300;
 }
 
 .main-title {
@@ -321,16 +326,20 @@ p {
 
 .accordion-body {
   padding: 2rem 4rem;
-  font-weight: 300;
 }
 .accordion-body p {
   font-size: 1.6rem;
+  margin-bottom: 1rem;
 }
 .accordion-body li {
   font-size: 1.6rem;
+  list-style-type: unset;
 }
 .accordion-body ul li:not(:last-child) {
   margin-bottom: 1rem;
+}
+.accordion-body ol li {
+  font-weight: 200;
 }
 
 textarea.form-control {
@@ -414,11 +423,10 @@ textarea.form-control {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
   flex-direction: column;
   text-align: center;
   padding: 0 2rem;
-  transition: gap 0.3s ease;
 }
 @media screen and (max-width: 575.98px) {
   .itc-slider-1 .itc-slider__item {
@@ -426,9 +434,6 @@ textarea.form-control {
     max-width: 100%;
     padding: 0 4rem;
   }
-}
-.itc-slider-1 .itc-slider__item:has(> .itc-slider__image-wrapper:hover) {
-  gap: 4rem;
 }
 .itc-slider-1 .itc-slider__item_large {
   gap: 2rem;
@@ -449,6 +454,7 @@ textarea.form-control {
   position: relative;
   padding-top: 100%;
   width: 100%;
+  transition: transform 0.3s ease;
 }
 .itc-slider-1 .itc-slider__image img:nth-(1) {
   position: relative;
@@ -461,6 +467,9 @@ textarea.form-control {
   transform: translate(-50%, -50%);
   width: 100%;
   border-radius: 2rem;
+}
+.itc-slider-1 .itc-slider__image:hover {
+  transform: scale(1.01);
 }
 .itc-slider-1 .itc-slider__image_large {
   width: 100%;
@@ -479,6 +488,7 @@ textarea.form-control {
   gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 0.1rem;
 }
 .itc-slider-1 .itc-slider__tags-item {
   font-size: 1.4rem;
@@ -506,6 +516,11 @@ textarea.form-control {
   border: none;
   transform: translateY(-50%);
   cursor: pointer;
+}
+@media screen and (max-width: 575.98px) {
+  .itc-slider-1 .itc-slider__btn {
+    top: 52%;
+  }
 }
 .itc-slider-1 .itc-slider__btn_hide {
   display: none;
