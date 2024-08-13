@@ -157,6 +157,27 @@ $(document).ready(function () {
     mediaQuery.xs.addEventListener("change", addClassForDropdown);
   }
 
+  window.addEventListener('scroll', function() {
+    // Получаем текущее положение скролла
+    let scrollPosition = window.scrollY;
+
+    // Пороговое значение для смены положения и добавления blur
+    let threshold = 700;
+
+    // Получаем элемент background
+    let bg = document.querySelector('.bg');
+
+    // Если скролл превышает пороговое значение, меняем позицию на absolute и добавляем blur
+    if (scrollPosition > threshold) {
+        bg.style.transform = 'scale(1.2)';
+        bg.style.filter = 'blur(5px)';
+
+    } else {
+        bg.style.filter = `blur(0)`;
+        bg.style.transform = 'scale(1)';
+    }
+});
+
   makeDropdown();
   stepSelect();
   noUpdateSite();
