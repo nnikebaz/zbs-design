@@ -83,6 +83,44 @@ a, li, ol {
   padding: 0 2rem;
 }
 
+.bg {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  top: -15rem;
+  z-index: -2;
+  overflow: hidden;
+}
+.bg img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+}
+
+.effect {
+  position: fixed;
+  width: 100%;
+  height: 1000px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background: #76C5C7;
+  filter: blur(80rem);
+  mix-blend-mode: color-dodge;
+  opacity: 10%;
+  animation: fade 10s infinite;
+  z-index: -1;
+}
+
+@keyframes fade {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
 .p-t-2 {
   padding-top: 2rem;
 }
@@ -864,7 +902,8 @@ textarea.form-control {
 }
 
 .footer-section {
-  padding: 10rem 0;
+  background-color: black;
+  padding: 10rem;
 }
 .footer-section__wrapper {
   display: flex;
@@ -1318,6 +1357,7 @@ textarea.form-control {
   width: 100%;
   height: 1500px;
   top: 5rem;
+  mix-blend-mode: color-dodge;
 }
 @media screen and (max-width: 575.98px) {
   .bluered-lights {
