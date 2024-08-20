@@ -157,26 +157,64 @@ $(document).ready(function () {
     mediaQuery.xs.addEventListener("change", addClassForDropdown);
   }
 
-  window.addEventListener('scroll', function() {
-    // Получаем текущее положение скролла
-    let scrollPosition = window.scrollY;
+  function scrollBlur() {
+    window.addEventListener('scroll', function() {
+      // Получаем текущее положение скролла
+      let scrollPosition = window.scrollY;
+  
+      // Пороговое значение для смены положения и добавления blur
+      let threshold = 700;
+  
+      // Получаем элемент background
+      let bg = document.querySelector('.bg');
+  
+      // Если скролл превышает пороговое значение, меняем позицию на absolute и добавляем blur
+      if (scrollPosition > threshold) {
+          bg.style.transform = 'scale(1.2)';
+          bg.style.filter = 'blur(5px)';
+  
+      } else {
+          bg.style.filter = `blur(0)`;
+          bg.style.transform = 'scale(1)';
+      }
+  });
+  }
 
-    // Пороговое значение для смены положения и добавления blur
-    let threshold = 700;
-
-    // Получаем элемент background
-    let bg = document.querySelector('.bg');
-
-    // Если скролл превышает пороговое значение, меняем позицию на absolute и добавляем blur
-    if (scrollPosition > threshold) {
-        bg.style.transform = 'scale(1.2)';
-        bg.style.filter = 'blur(5px)';
-
-    } else {
-        bg.style.filter = `blur(0)`;
-        bg.style.transform = 'scale(1)';
+  class visibleToggle {
+    constructor(element) {
+      this.element = element;
     }
-});
+
+    visible() {
+      this.element.style.display = "flex"; 
+      setTimeout(() => {
+        this.element.style.opacity = "1";
+      }, 10)
+    }
+
+    hidden () {
+      setTimeout(() => {
+        this.element.style.display = "none";
+      }, 500)
+      this.element.style.opacity = "0";
+    }
+  }
+
+  function toggleVisibleMenu() {
+    const menu = new visibleToggle(document.getElementById("menu"));
+    const toggle =  document.getElementById("header-toggle")
+    console.log(menu, toggle)
+
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        menu.visible();
+        console.log("toggle pos checked")
+      } else {
+        menu.hidden();
+        console.log("toggle pos unchecked")
+      }
+    })
+  }
 
   makeDropdown();
   stepSelect();
@@ -184,4 +222,6 @@ $(document).ready(function () {
   validate();
   Smooth();
   dragEllipse();
+  scrollBlur();
+  toggleVisibleMenu();
 });

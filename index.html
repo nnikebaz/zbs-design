@@ -29,11 +29,20 @@
       <div class="container">
         <div class="header-section__wrapper">
           <a href="/"><img src="./icons/ZBS-design-logo.svg" alt="Логотип" /></a>
-          <input type="checkbox" class="header-section__toogle" id="header-toogle" />
-          <label for="header-toogle" class="header-section__button" tabindex="0">
+          <input type="checkbox" class="header-section__toggle" id="header-toggle" />
+          <label for="header-toggle" class="header-section__button" tabindex="0">
             <span class="header-section__icon"></span>
           </label>
         </div>
+        <nav class="header-section__nav" id="menu">
+          <ul class="header-section__list">
+            <li class="header-section__item"><a href="#about-me" class="header-section__link">О себе</a></li>
+            <li class="header-section__item"><a href="#portfolio" class="header-section__link">Проекты</a></li>
+            <li class="header-section__item"><a href="#contact-me" class="header-section__link">Стоимость</a></li>
+            <li class="header-section__item"><a href="#busido" class="header-section__link">Ценности</a></li>
+            <li class="header-section__item"><a href="#faq" class="header-section__link">Ответы на вопросы</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
     <!-- test -->
@@ -386,7 +395,7 @@
             <div class="price-section__item">
               <p class="price-section__item-text-1 secondary-title">Готовый сайт</p>
               <p class="price-section__item-text-2">
-                Дизайн макета сайта, вёрстка на&nbsp;Tilda. Возможна разработка на&nbsp;чистом HTML, CSS и&nbsp;JavaScript<br /><br /><span>— Лендинги<br />— Интернет-магазины<br />— Многостраничные сайты</span>
+               Разработаем макет сайта и&nbsp;сверстаем на&nbsp;платформе Tilda или WordPress.<br /><br /><span>— Лендинги<br />— Интернет-магазины<br />— Многостраничные сайты</span>
               </p>
               <p class="price-section__item-text-3">от&nbsp;20&nbsp;000&nbsp;₽</p>
             </div>
@@ -394,8 +403,18 @@
             <hr class="line price-section__line"></hr>
 
             <div class="price-section__item">
-              <p class="price-section__item-text-1 secondary-title">Разработка дизайн-макета сайта</p>
-              <p class="price-section__item-text-2">Дизайн макета сайта в&nbsp;Figma. Мобильная и&nbsp;десктопная версия</p>
+              <p class="price-section__item-text-1 secondary-title">Продвижение в VK Ads / Yandex Direct</p>
+              <p class="price-section__item-text-2">
+                Запустим рекламную кампанию на площадке VK Ads или Yandex Direct. Вы получите целевые заявки для своего бизнеса.
+              </p>
+              <p class="price-section__item-text-3">от&nbsp;5&nbsp;000&nbsp;₽</p>
+            </div>
+
+            <hr class="line price-section__line"></hr>
+
+            <div class="price-section__item">
+              <p class="price-section__item-text-1 secondary-title">Макет сайта</p>
+              <p class="price-section__item-text-2">Спроектируем дизайн макета сайта в&nbsp;Figma. Мобильная и&nbsp;десктопная версия.</p>
               <p class="price-section__item-text-3">от&nbsp;10&nbsp;000&nbsp;₽</p>
             </div>
   
@@ -403,15 +422,15 @@
   
             <div class="price-section__item">
               <p class="price-section__item-text-1 secondary-title">Вёрстка сайта</p>
-              <p class="price-section__item-text-2">Вёрстка по&nbsp;готовому макету в&nbsp;Tilda. Возможна вёрстка на&nbsp;HTML, CSS и&nbsp;JavaScript</p>
+              <p class="price-section__item-text-2">Сверстаем сайт по&nbsp;готовому макету.</p>
               <p class="price-section__item-text-3">от&nbsp;10&nbsp;000&nbsp;₽</p>
             </div>
   
             <hr class="line price-section__line"></hr>
 
             <div class="price-section__item">
-              <p class="price-section__item-text-1 secondary-title">Обновление контента на&nbsp;сайте</p>
-              <p class="price-section__item-text-2">Обновление контента на&nbsp;вашем сайте. На&nbsp;разовой или регулярной основе</p>
+              <p class="price-section__item-text-1 secondary-title">Обновление контента</p>
+              <p class="price-section__item-text-2">Обновим контент на&nbsp;вашем сайте. На&nbsp;разовой или регулярной основе</p>
               <p class="price-section__item-text-3">от&nbsp;2&nbsp;000&nbsp;₽</p>
             </div>
   
@@ -420,7 +439,7 @@
             <div class="price-section__item">
               <p class="price-section__item-text-1 secondary-title">Дизайн</p>
               <p class="price-section__item-text-2">
-                Дизайн рекламного баннера<br /><br /><span>— Наружная реклама<br />— Веб-баннеры<br />— Креативы</span>
+                Создадим дизайн любого вида рекламы<br /><br /><span>— Наружная реклама<br />— Веб-баннеры<br />— Креативы<br />— Рекламные видео</span>
               </p>
               <p class="price-section__item-text-3">от&nbsp;5&nbsp;000&nbsp;₽</p>
             </div>
@@ -706,7 +725,7 @@
       </div>
     </footer>
 
-    <!-- <div class="effect"></div> -->
+    <div class="effect"></div>
     <div class="bg">
       <picture>
         <img src="./img/bg.min.png" alt="Фон">

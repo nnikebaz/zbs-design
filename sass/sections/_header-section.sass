@@ -1,5 +1,4 @@
 .header-section
-
     &__wrapper
         display: flex
         justify-content: space-between
@@ -11,7 +10,7 @@
         img
             max-width: 100%
 
-    &__toogle
+    &__toggle
         display: none
     &__button
         border: 0.15rem solid #fff
@@ -24,6 +23,8 @@
         justify-content: center
         align-items: center
         cursor: pointer
+        position: sticky
+        top: 0
 
     &__icon
         position: relative
@@ -52,11 +53,27 @@
     &__button:hover &__icon::after
         top: .9rem
 
-    &__toogle:checked + &__button &__icon
+    &__toggle:checked + &__button &__icon
         background: transparent
-    &__toogle:checked + &__button &__icon::before
+    &__toggle:checked + &__button &__icon::before
         top: 0
         rotate: (135deg)
-    &__toogle:checked + &__button &__icon::after
+    &__toggle:checked + &__button &__icon::after
         top: 0
         rotate: (-135deg)
+
+    &__nav
+        position: fixed
+        display: none
+        opacity: 0
+        transition: opacity .3s ease
+        justify-content: center
+        align-items: center
+        width: 25%
+        height: 100%
+        top: 0
+        right: 0
+        background-color: black
+        z-index: 10
+    &__list
+        text-align: right

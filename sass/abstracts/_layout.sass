@@ -13,7 +13,11 @@
     overflow: hidden
     transition: position 0.3s ease, filter 1s ease, transform .5s ease
     filter: none
-    background-color: #131313
+    background-color: #000
+    video
+        width: 100%
+        height: auto
+        background-size: cover
     img
         width: 100%
         height: auto
@@ -27,15 +31,8 @@
     transform: translate(-50%, -50%)
     top: 50%
     left: 50%
-    background: #76C5C7
+    background: #5ba4c4
     filter: blur(80rem)
     mix-blend-mode: color-dodge
-    opacity: 10%
-    animation: fade 10s infinite
+    opacity: 0.2
     z-index: -1
-
-@keyframes fade
-    0%,100%
-        opacity: .5
-    50%
-        opacity: .1
