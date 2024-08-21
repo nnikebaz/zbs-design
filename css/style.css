@@ -5,13 +5,14 @@
   box-sizing: border-box;
 }
 
-a {
+a, a:hover {
   text-decoration: none;
-  color: #000;
+  color: unset;
 }
 
-li {
+li, li:hover {
   list-style-type: none;
+  color: unset;
 }
 
 button {
@@ -94,11 +95,6 @@ a, li, ol {
   filter: none;
   background-color: #000;
 }
-.bg video {
-  width: 100%;
-  height: auto;
-  background-size: cover;
-}
 .bg img {
   width: 100%;
   height: auto;
@@ -118,6 +114,20 @@ a, li, ol {
   mix-blend-mode: color-dodge;
   opacity: 0.2;
   z-index: -1;
+}
+
+.blackout {
+  display: none;
+  position: fixed;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(2px);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .p-t-2 {
@@ -941,14 +951,26 @@ textarea.form-control {
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
-  z-index: 200;
+  z-index: 20;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   position: sticky;
-  top: 0;
+}
+.header-section__button_close {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 2rem;
+  right: 4rem;
 }
 .header-section__icon {
   position: relative;
@@ -972,28 +994,41 @@ textarea.form-control {
 .header-section__icon::after {
   top: 0.6rem;
 }
+.header-section__icon_close {
+  position: relative;
+}
+.header-section__icon_close::before, .header-section__icon_close::after {
+  width: 3rem;
+  height: 0.25rem;
+  border-radius: 0.1rem;
+  background: #fff;
+  display: inline-block;
+  transition: all 0.2s;
+}
+.header-section__icon_close::before, .header-section__icon_close::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.header-section__icon_close::before {
+  top: 0;
+  rotate: 135deg;
+}
+.header-section__icon_close::after {
+  top: 0;
+  rotate: -135deg;
+}
 .header-section__button:hover .header-section__icon::before {
   top: -0.9rem;
 }
 .header-section__button:hover .header-section__icon::after {
   top: 0.9rem;
 }
-.header-section__toggle:checked + .header-section__button .header-section__icon {
-  background: transparent;
-}
-.header-section__toggle:checked + .header-section__button .header-section__icon::before {
-  top: 0;
-  rotate: 135deg;
-}
-.header-section__toggle:checked + .header-section__button .header-section__icon::after {
-  top: 0;
-  rotate: -135deg;
-}
 .header-section__nav {
   position: fixed;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  display: flex;
+  transition: transform 0.3s ease-in;
+  transform: translateX(100%);
   justify-content: center;
   align-items: center;
   width: 25%;
@@ -1001,10 +1036,29 @@ textarea.form-control {
   top: 0;
   right: 0;
   background-color: black;
-  z-index: 10;
+  z-index: 100;
+  box-shadow: 0 0 0 4px rgb(0, 0, 0);
 }
 .header-section__list {
-  text-align: right;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  text-align: center;
+}
+.header-section__item {
+  transition: scale 0.3s ease;
+  padding: 1rem;
+}
+.header-section__item:hover {
+  scale: 1.2;
+}
+.header-section__link {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 1rem;
+}
+.header-section__link:hover {
+  color: #92FAE7;
 }
 
 .offer-section p {

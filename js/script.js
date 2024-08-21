@@ -19,7 +19,9 @@ $(document).ready(function () {
       }
     };
     const makeActiveContent = (btn) => {
-      const prevActiveItem = document.querySelector(".way-section__right.active");
+      const prevActiveItem = document.querySelector(
+        ".way-section__right.active"
+      );
       if (prevActiveItem) {
         prevActiveItem.classList.remove("active");
       }
@@ -31,14 +33,15 @@ $(document).ready(function () {
       dropdownToggle.textContent = btn.textContent;
     };
 
-    stepButtons.forEach(btn => btn.addEventListener('click', function(event) {
-      event.preventDefault()
+    stepButtons.forEach((btn) =>
+      btn.addEventListener("click", function (event) {
+        event.preventDefault();
 
-      changeBorder(btn)
-      makeActiveContent(btn)
-      updateDropdownText(btn)
-    }))
-
+        changeBorder(btn);
+        makeActiveContent(btn);
+        updateDropdownText(btn);
+      })
+    );
   }
 
   function noUpdateSite() {
@@ -158,62 +161,88 @@ $(document).ready(function () {
   }
 
   function scrollBlur() {
-    window.addEventListener('scroll', function() {
+    window.addEventListener("scroll", function () {
       // Получаем текущее положение скролла
       let scrollPosition = window.scrollY;
-  
+
       // Пороговое значение для смены положения и добавления blur
       let threshold = 700;
-  
+
       // Получаем элемент background
-      let bg = document.querySelector('.bg');
-  
+      let bg = document.querySelector(".bg");
+
       // Если скролл превышает пороговое значение, меняем позицию на absolute и добавляем blur
       if (scrollPosition > threshold) {
-          bg.style.transform = 'scale(1.2)';
-          bg.style.filter = 'blur(5px)';
-  
+        bg.style.transform = "scale(1.2)";
+        bg.style.filter = "blur(5px)";
       } else {
-          bg.style.filter = `blur(0)`;
-          bg.style.transform = 'scale(1)';
+        bg.style.filter = `blur(0)`;
+        bg.style.transform = "scale(1)";
       }
-  });
+    });
   }
 
-  class visibleToggle {
+  class VisibleToggle {
     constructor(element) {
       this.element = element;
     }
 
     visible() {
-      this.element.style.display = "flex"; 
+      this.element.style.display = "flex";
       setTimeout(() => {
         this.element.style.opacity = "1";
-      }, 10)
+      }, 10);
     }
 
-    hidden () {
+    hidden() {
       setTimeout(() => {
         this.element.style.display = "none";
-      }, 500)
+      }, 350);
       this.element.style.opacity = "0";
     }
   }
 
-  function toggleVisibleMenu() {
-    const menu = new visibleToggle(document.getElementById("menu"));
-    const toggle =  document.getElementById("header-toggle")
-    console.log(menu, toggle)
+  class RightSlideToggle {
+    constructor(element) {
+      this.element = element;
+    }
 
-    toggle.addEventListener('change', () => {
-      if (toggle.checked) {
-        menu.visible();
-        console.log("toggle pos checked")
+    slideIn() {
+      this.element.style.transform = "translateX(0%)";
+    }
+
+    slideOut() {
+      this.element.style.transform = "translateX(100%)";
+    }
+  }
+
+  function makeSideBar() {
+    const menu = document.getElementById("menu");
+    const toggleButton = document.getElementById("header-toggle");
+    const blackOut = document.querySelector(".blackout");
+    const blackOutToggle = new VisibleToggle(blackOut);
+    const menuToggle = new RightSlideToggle(menu);
+
+    if (!menu || !toggleButton || !blackOut) {
+      console.error("Menu, toggle button, or blackout element not found.");
+      return;
+    }
+
+    blackOut.addEventListener("click", () => {
+      blackOutToggle.hidden();
+      menuToggle.slideOut();
+      toggleButton.checked = false;
+    });
+
+    toggleButton.addEventListener("change", () => {
+      if (toggleButton.checked) {
+        menuToggle.slideIn();
+        blackOutToggle.visible();
       } else {
-        menu.hidden();
-        console.log("toggle pos unchecked")
+        menuToggle.slideOut();
+        blackOutToggle.hidden();
       }
-    })
+    });
   }
 
   makeDropdown();
@@ -223,5 +252,6 @@ $(document).ready(function () {
   Smooth();
   dragEllipse();
   scrollBlur();
-  toggleVisibleMenu();
+  // toggleVisibleMenu();
+  makeSideBar();
 });

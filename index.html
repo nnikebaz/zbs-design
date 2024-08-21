@@ -25,16 +25,22 @@
   </head>
 
   <body>
+
+
     <header class="header-section p-t-4 m-b-4">
       <div class="container">
         <div class="header-section__wrapper">
           <a href="/"><img src="./icons/ZBS-design-logo.svg" alt="Логотип" /></a>
-          <input type="checkbox" class="header-section__toggle" id="header-toggle" />
+          <input type="checkbox" class="header-section__toggle" id="header-toggle"/>
           <label for="header-toggle" class="header-section__button" tabindex="0">
             <span class="header-section__icon"></span>
           </label>
         </div>
         <nav class="header-section__nav" id="menu">
+          <input type="checkbox" class="header-section__toggle" id="header-toggle"/>
+          <label for="header-toggle" class="header-section__button_close" tabindex="0">
+            <span class="header-section__icon_close"></span>
+          </label>
           <ul class="header-section__list">
             <li class="header-section__item"><a href="#about-me" class="header-section__link">О себе</a></li>
             <li class="header-section__item"><a href="#portfolio" class="header-section__link">Проекты</a></li>
@@ -45,8 +51,10 @@
         </nav>
       </div>
     </header>
-    <!-- test -->
+    
     <main>
+      <div class="blackout"></div>
+
       <section class="offer-section m-b-10">
         <div class="container">
           <div class="offer-section__wrapper">
