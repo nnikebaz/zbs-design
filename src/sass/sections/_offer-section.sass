@@ -1,0 +1,67 @@
+.offer-section
+    p
+        @include fluid-text(1.2, 2.4)
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+    
+    h2
+        line-height: 80%
+    &__content
+        max-width: 68rem
+    &__title
+        @include fluid-text(6.4, 12.5)
+        margin-bottom: 3rem
+        span
+            @include fluid-text(5.2,10.19)
+            font-weight: 400
+
+    &__photo
+        width: 39%
+        height: auto
+
+    &__about-me
+        display: flex
+        gap: 4rem
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 4rem
+        +respond(xs)
+            gap: 2rem
+        span
+            font-weight: 600
+            @include fluid-text(1.7, 2.6)
+
+        p
+            font-weight: 200
+
+
+    &__offer
+        display: flex
+        justify-content: space-between
+
+    &__left-side
+        display: flex
+        max-width: 68rem
+        width: 100%
+        justify-content: space-between
+        flex-wrap: wrap
+        align-items: flex-end
+        gap: 2rem
+        +respond(xs)
+            order: 2
+            justify-content: flex-end
+        p
+            font-weight: 200
+            +respond(xs)
+                text-align: right
+
+    &__social
+        display: flex
+        align-items: flex-end
+        justify-content: flex-end
+
+.social-icon
+    a
+        border-radius: 50%

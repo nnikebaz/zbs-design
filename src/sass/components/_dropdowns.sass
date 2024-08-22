@@ -1,0 +1,26 @@
+.dropdown-toggle
+    font-size: 1.8rem
+    border: 0.1rem solid #fff
+    font-weight: 200
+    border-radius: 1rem
+    padding: 1.5rem 2rem
+    text-align: center
+    transition: transform .3s ease
+    margin-bottom: 4rem
+    display: none
+    +respond(xs)
+        display: block
+    &:hover
+        transform: scale(1.05)
+    
+.dropdown-menu
+    transform: translate3d(0px, 8rem, 0px)!important
+
+.dropdown-menu.show
+    display: flex
+    flex-direction: column
+    width: 100%
+
+.dropdown-item.active, .dropdown-item:active
+    color: unset
+    background-color: unset
