@@ -643,7 +643,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _manifest_webmanifest__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./manifest.webmanifest */ \"./src/manifest.webmanifest\");\n/* harmony import */ var _sass_style_sass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sass/style.sass */ \"./src/sass/style.sass\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.esm.js\");\n/* harmony import */ var _js_script_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/script.js */ \"./src/js/script.js\");\n/* harmony import */ var _js_itc_slider_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/itc-slider.js */ \"./src/js/itc-slider.js\");\n/* harmony import */ var _js_itc_slider_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_js_itc_slider_js__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./css/style.css */ \"./src/css/style.css\");\n\n\n\n// Import all of Bootstrap's JS\n\n\n// import js\n\n\n\n// import css\n\n\n\n//# sourceURL=webpack://zbs-design/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _manifest_webmanifest__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./manifest.webmanifest */ \"./src/manifest.webmanifest\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.esm.js\");\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var _sass_style_sass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sass/style.sass */ \"./src/sass/style.sass\");\n/* harmony import */ var _js_script_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/script.js */ \"./src/js/script.js\");\n/* harmony import */ var _js_itc_slider_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/itc-slider.js */ \"./src/js/itc-slider.js\");\n/* harmony import */ var _js_itc_slider_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_js_itc_slider_js__WEBPACK_IMPORTED_MODULE_5__);\n\n\n// Import all of Bootstrap's JS\n\n// import css\n\n\n\n// import js\n\n\n\n//# sourceURL=webpack://zbs-design/./src/index.js?");
 
 /***/ }),
 
@@ -708,17 +708,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://zbs-design/./src/sass/style.sass?");
-
-/***/ }),
-
-/***/ "./src/css/style.css":
-/*!***************************!*\
-  !*** ./src/css/style.css ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://zbs-design/./src/css/style.css?");
 
 /***/ }),
 
