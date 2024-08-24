@@ -1076,6 +1076,9 @@ textarea.form-control {
   color: #92FAE7;
 }
 
+.offer-section img {
+  width: 100%;
+}
 .offer-section p {
   font-size: clamp(1.2rem, 2vw, 2.4rem);
 }
@@ -1099,7 +1102,7 @@ textarea.form-control {
   font-weight: 400;
 }
 .offer-section__photo {
-  width: 39%;
+  width: 65%;
   height: auto;
 }
 .offer-section__about-me {

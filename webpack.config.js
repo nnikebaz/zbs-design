@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const loader = require("sass-loader");
+const { sources } = require("webpack");
 
 module.exports = {
   entry: "./src/index.js", // Основная точка входа для JavaScript
@@ -53,7 +54,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(`|svg|ico)$/i, // Регулярное выражение для обработки изображений
+        test: /\.(|svg|ico)$/i, // Регулярное выражение для обработки изображений
         type: "asset/resource", // Используем встроенный механизм Webpack для обработки изображений
         generator: {
           filename: "icons/[name][ext]", // Путь и имя файла для изображений в выходной папке dist
@@ -61,26 +62,30 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: "html-loader",
+        use: [
+          {
+            loader: 'html-loader',
+          },
+        ],
       },
     ],
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html", // Шаблон для генерации index.html в папке dist
+      template: "./src/index.html", // Шаблон для генерации index.html
       minify: {
         html5                          : true,
-        collapseWhitespace             : true,
+        // collapseWhitespace             : true,
         minifyCSS                      : true,
         minifyJS                       : true,
-        minifyURLs                     : false,
+        // minifyURLs                     : false,
         removeAttributeQuotes          : true,
         removeComments                 : true, // false for Vue SSR to find app placeholder
         removeEmptyAttributes          : true,
         removeOptionalTags             : true,
         removeRedundantAttributes      : true,
-        useShortDoctype                : true
+        // useShortDoctype                : true
       }
     }),
     new MiniCssExtractPlugin({
@@ -111,7 +116,7 @@ module.exports = {
           options: {
             plugins: [["imagemin-webp", { quality: 90 }]],
           },
-          filename: "img/[name].webp", // Имя файла для WebP в выходной папке
+          filename: "../static/img/[name].webp", // Имя файла для WebP в выходной папке
         },
       ],
     }),
