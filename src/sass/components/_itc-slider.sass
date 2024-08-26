@@ -1,5 +1,9 @@
 .itc-slider
     position: relative
+    img
+        width: 100%
+    &__image-wrapper
+        border-radius: 2rem
     &__wrapper
         overflow: hidden
     &__items
@@ -53,15 +57,8 @@
         flex: 1 1 30rem
 
     &__image-wrapper
-        width: 100%
-        transition: transform .3s ease
         cursor: pointer
-        &:hover
-            transform: scale(1.05)   
-
-    &__image
         position: relative
-        padding-top: 100%
         width: 100%
         transition: transform .3s ease
         img
@@ -76,8 +73,7 @@
                 width: 100%
                 border-radius: 2rem
         &:hover
-            transform: scale(1.01)
-            
+            transform: scale(1.05)
 
     &__image_large
         width: 100%
@@ -139,7 +135,6 @@
             right: -4rem
             @include respond(xs)
                 right: -1rem
-            
 
     &__btn:hover,
     &__btn:focus
@@ -201,7 +196,6 @@
             margin-left: 0rem
             margin-right: 0rem
 
-
     &__item:last-child .itc-slider__text-wrapper
         @include respond(xs)
             gap: 2rem
@@ -223,7 +217,6 @@
                 font-size: 1.8rem
         span
             font-weight: 500
-                
 
     &__number
         font-size: 16rem
@@ -260,13 +253,11 @@
         @include respond(xs)
             max-width: 80%
 
-
     &__item:nth-child(2) .itc-slider__number
         background-image: linear-gradient(180deg, #91C0CC 0%, #DDE7E8 100%)
         -webkit-background-clip: text
         background-clip: text
         color: transparent
-
 
     &__item:nth-child(2) .itc-slider__img
         max-width: 45%

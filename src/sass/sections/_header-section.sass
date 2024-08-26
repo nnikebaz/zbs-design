@@ -5,8 +5,9 @@
         width: 100%
         align-items: center
         a
-            width: clamp(15rem, 22vw + 2rem, 100%)
-            height: 100%
+            img
+                width: clamp(15rem, 22vw + 2rem, 100%)
+                height: 100%
         img
             max-width: 100%
 
@@ -99,7 +100,7 @@
 
     &__nav
         position: fixed
-        display: flex
+        display: none
         transition: transform .3s ease-in
         transform: translateX(100%)
         justify-content: center

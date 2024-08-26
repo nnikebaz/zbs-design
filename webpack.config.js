@@ -47,7 +47,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpg|jpeg)$/i, // Регулярное выражение для обработки изображений
+        test: /\.(png|jpg|jpeg|webp)$/i, // Регулярное выражение для обработки изображений
         type: "asset/resource", // Используем встроенный механизм Webpack для обработки изображений
         generator: {
           filename: "img/[name][ext]", // Путь и имя файла для изображений в выходной папке dist
@@ -73,7 +73,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html", // Шаблон для генерации index.html
+      template: "src/index.html", // Шаблон для генерации index.html
       minify: {
         html5                          : true,
         // collapseWhitespace             : true,
@@ -97,38 +97,50 @@ module.exports = {
           from: path.resolve(__dirname, "src/manifest.webmanifest"), // Копируем манифест
           to: path.resolve(__dirname, "dist/manifest.webmanifest"), // Путь в dist манифест
         },
-      ],
-    }),
-    new ImageMinimizerPlugin({
-      minimizer: {
-        implementation: ImageMinimizerPlugin.imageminGenerate,
-        options: {
-          plugins: [
-            ["imagemin-webp", { quality: 90 }], // Настройка качества для WebP
-          ],
-        },
-      },
-      generator: [
+        // {
+        //   from: path.resolve(__dirname, "src/img"), // Копируем изображения
+        //   to: path.resolve(__dirname, "src/img"), // Путь в dist изображения
+        // },
+        // {
+        //   from: path.resolve(__dirname, "src/img"), // Копируем изображения
+        //   to: path.resolve(__dirname, "dist/img"), // Путь в dist изображения
+        // },
         {
-          // Генерация WebP файлов
-          preset: "webp",
-          implementation: ImageMinimizerPlugin.imageminGenerate,
-          options: {
-            plugins: [["imagemin-webp", { quality: 90 }]],
-          },
-          filename: "../static/img/[name].webp", // Имя файла для WebP в выходной папке
+          from: path.resolve(__dirname, "src/icons"), // копируем иконки
+          to: path.resolve(__dirname, "dist/icons"), // Путь в dist иконки
         },
       ],
     }),
+    // new ImageMinimizerPlugin({
+    //   minimizer: {
+    //     implementation: ImageMinimizerPlugin.imageminGenerate,
+    //     options: {
+    //       plugins: [
+    //         ["imagemin-webp", { quality: 100 }], // Настройка качества для WebP
+    //       ],
+    //     },
+    //   },
+    //   generator: [
+    //     {
+    //       // Генерация WebP файлов
+    //       preset: "webp",
+    //       implementation: ImageMinimizerPlugin.imageminGenerate,
+    //       options: {
+    //         plugins: [["imagemin-webp", { quality: 100 }]],
+    //       },
+    //       // filename: "./img/[name].webp", // Имя файла для WebP в выходной папке
+    //     },
+    //   ],
+    // }),
   ],
 
   devServer: {
     static: {
-      directory: path.join(__dirname, "dist"), // Каталог для статики
+      directory: path.join(__dirname, "src"), // Каталог для статики
     },
     open: true, // Автоматически открывать браузер
     port: 9000, // Задаем порт для devServer
-    watchFiles: ["src/**/*", "static/**/*"],
+    watchFiles: ["src/**/*"],
   },
 
   mode: "development", // Режим сборки

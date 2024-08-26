@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $, { event } from 'jquery';
 import Parallax from 'parallax-js';
 
 $(document).ready(function () {
@@ -163,31 +163,50 @@ $(document).ready(function () {
 
   function makeSideBar() {
     const menu = document.getElementById("menu");
-    const toggleButton = document.getElementById("header-toggle");
+    const checkbox = document.getElementById("header-toggle");
     const blackOut = document.querySelector(".blackout");
     const blackOutToggle = new VisibleToggle(blackOut);
-    const menuToggle = new RightSlideToggle(menu);
+    const menuVisibleToggle = new VisibleToggle(menu);
+    const menuSlideToggle = new RightSlideToggle(menu);
+    const toggleButton = document.querySelector('.header-section__button')
 
     if (!menu || !toggleButton || !blackOut) {
       console.error("Menu, toggle button, or blackout element not found.");
       return;
     }
-
-    blackOut.addEventListener("click", () => {
-      blackOutToggle.hidden();
-      menuToggle.slideOut();
-      toggleButton.checked = false;
-    });
-
-    toggleButton.addEventListener("change", () => {
-      if (toggleButton.checked) {
-        menuToggle.slideIn();
+    
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        menuVisibleToggle.visible();
+        menuSlideToggle.slideIn();
         blackOutToggle.visible();
       } else {
-        menuToggle.slideOut();
+        menuVisibleToggle.hidden();
+        menuSlideToggle.slideOut();
         blackOutToggle.hidden();
       }
     });
+
+    toggleButton.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        menuVisibleToggle.visible();
+        menuSlideToggle.slideIn();
+        blackOutToggle.visible();
+        checkbox.checked = true
+      } else {
+        menuVisibleToggle.hidden();
+        menuSlideToggle.slideOut();
+        blackOutToggle.hidden();
+        checkbox.checked = false
+      }
+    })
+
+    blackOut.addEventListener("click", () => {
+      blackOutToggle.hidden();
+      menuSlideToggle.slideOut();
+      checkbox.checked = false;
+    });
+    
   }
 
   makeDropdown();
