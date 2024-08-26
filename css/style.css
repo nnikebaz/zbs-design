@@ -450,6 +450,9 @@ textarea.form-control {
 .itc-slider img {
   width: 100%;
 }
+.itc-slider__image-wrapper {
+  border-radius: 2rem;
+}
 .itc-slider__wrapper {
   overflow: hidden;
 }
@@ -946,7 +949,7 @@ textarea.form-control {
   width: 100%;
   align-items: center;
 }
-.header-section__wrapper a {
+.header-section__wrapper a img {
   width: clamp(15rem, 22vw + 2rem, 100%);
   height: 100%;
 }
@@ -1006,6 +1009,7 @@ textarea.form-control {
 }
 .header-section__icon_close {
   position: relative;
+  right: 15px;
 }
 .header-section__icon_close::before, .header-section__icon_close::after {
   width: 3rem;
@@ -1036,7 +1040,7 @@ textarea.form-control {
 }
 .header-section__nav {
   position: fixed;
-  display: flex;
+  display: none;
   transition: transform 0.3s ease-in;
   transform: translateX(100%);
   justify-content: center;
@@ -1058,6 +1062,9 @@ textarea.form-control {
 .header-section__item {
   transition: scale 0.3s ease;
   padding: 1rem;
+}
+.header-section__item a {
+  border-radius: 1rem;
 }
 .header-section__item:hover {
   scale: 1.2;
