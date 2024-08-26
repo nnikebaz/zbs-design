@@ -227,6 +227,22 @@ class ItcSlider {
     }
   }
 
+  #onKeyDown (e) {
+    if (e.key === 'Enter') {
+      const classBtnPrev = this.#state.prefix + this.constructor.#BTN_PREV;
+      const classBtnNext = this.#state.prefix + this.constructor.#BTN_NEXT;
+      this.#autoplay('stop');
+      if (e.target.closest(`.${classBtnPrev}`) || e.target.closest(`.${classBtnNext}`)) {
+        this.#state.direction = e.target.closest(`.${classBtnPrev}`) ? 'prev' : 'next';
+        this.#move();
+      } else if (e.target.dataset.slideTo) {
+        const index = parseInt(e.target.dataset.slideTo, 10);
+        this.#moveTo(index);
+      }
+      this.#config.loop ? this.#autoplay() : null;
+    }
+  }
+
   #attachEvents() {
     this.#state.events = {
       'click': [this.#state.el, this.#onClick.bind(this), true],
@@ -240,7 +256,8 @@ class ItcSlider {
       'touchend': [document, this.#onSwipeEnd.bind(this), this.#config.swipe],
       'mouseup': [document, this.#onSwipeEnd.bind(this), this.#config.swipe],
       'dragstart': [this.#state.el, this.#onDragStart.bind(this), true],
-      'visibilitychange': [document, this.#onVisibilityChange.bind(this), true]
+      'visibilitychange': [document, this.#onVisibilityChange.bind(this), true],
+      'keydown' : [document, this.#onKeyDown.bind(this), true]
     };
     Object.keys(this.#state.events).forEach((type) => {
       if (this.#state.events[type][2]) {

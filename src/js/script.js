@@ -132,18 +132,28 @@ $(document).ready(function () {
       this.element = element;
     }
 
-    visible() {
+    displayFlex() {
       this.element.style.display = "flex";
-      setTimeout(() => {
-        this.element.style.opacity = "1";
-      }, 10);
     }
 
-    hidden() {
+    displayNoneTimeOut350() {
       setTimeout(() => {
         this.element.style.display = "none";
       }, 350);
-      this.element.style.opacity = "0";
+    }
+
+    displayBlockOpacity1() {
+      this.element.style.display = "block"
+      setTimeout(() => {
+        this.element.style.opacity = "1"
+      }, 10)
+    }
+
+    displayNoneOpacity0() {
+      this.element.style.opacity = '0'
+      setTimeout(() => {
+        this.element.style.display = "none"
+      }, 300)
     }
   }
 
@@ -153,7 +163,9 @@ $(document).ready(function () {
     }
 
     slideIn() {
-      this.element.style.transform = "translateX(0%)";
+      setTimeout(() => {
+        this.element.style.transform = "translateX(0%)";
+      }, 10)
     }
 
     slideOut() {
@@ -163,48 +175,59 @@ $(document).ready(function () {
 
   function makeSideBar() {
     const menu = document.getElementById("menu");
-    const checkbox = document.getElementById("header-toggle");
+    const checkbox = document.querySelector(".header-section__toggle");
     const blackOut = document.querySelector(".blackout");
     const blackOutToggle = new VisibleToggle(blackOut);
     const menuVisibleToggle = new VisibleToggle(menu);
     const menuSlideToggle = new RightSlideToggle(menu);
     const toggleButton = document.querySelector('.header-section__button')
+    const toggleButtonClose = document.querySelector('.header-section__button_close')
 
     if (!menu || !toggleButton || !blackOut) {
       console.error("Menu, toggle button, or blackout element not found.");
       return;
     }
-    
-    checkbox.addEventListener("change", () => {
-      if (checkbox.checked) {
-        menuVisibleToggle.visible();
+  
+    function menuSlide(checkboxElement) {
+      if (checkboxElement) {
+        menuVisibleToggle.displayFlex();
         menuSlideToggle.slideIn();
-        blackOutToggle.visible();
+        blackOutToggle.displayBlockOpacity1();
       } else {
-        menuVisibleToggle.hidden();
+        menuVisibleToggle.displayNoneTimeOut350();
         menuSlideToggle.slideOut();
-        blackOutToggle.hidden();
+        blackOutToggle.displayNoneOpacity0();
       }
-    });
+    }
+
+    checkbox.addEventListener('change', () => {
+      menuSlide(checkbox.checked)
+    })
 
     toggleButton.addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
-        menuVisibleToggle.visible();
-        menuSlideToggle.slideIn();
-        blackOutToggle.visible();
-        checkbox.checked = true
-      } else {
-        menuVisibleToggle.hidden();
-        menuSlideToggle.slideOut();
-        blackOutToggle.hidden();
+        checkbox.checked = !checkbox.checked
+        menuSlide(checkbox.checked)
+      } else if (event.key === 'Escape') {
         checkbox.checked = false
+        menuSlide(checkbox.checked)
+      }
+    })
+
+    toggleButtonClose.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        checkbox.checked = !checkbox.checked
+        menuSlide(checkbox.checked)
+      } else if (event.key === 'Escape') {
+        checkbox.checked = false
+        menuSlide(checkbox.checked)
       }
     })
 
     blackOut.addEventListener("click", () => {
-      blackOutToggle.hidden();
+      blackOutToggle.displayNoneOpacity0();
       menuSlideToggle.slideOut();
-      checkbox.checked = false;
+      checkbox.checked = !checkbox.checked;
     });
     
   }
