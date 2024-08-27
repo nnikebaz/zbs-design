@@ -177,26 +177,54 @@ $(document).ready(function () {
     const menu = document.getElementById("menu");
     const checkbox = document.querySelector(".header-section__toggle");
     const blackOut = document.querySelector(".blackout");
+    const toggleButton = document.querySelector('.header-section__button')
+    const toggleButtonClose = document.querySelector('.header-section__button_close')
+    const menuItem = document.querySelectorAll('.header-section__link')
     const blackOutToggle = new VisibleToggle(blackOut);
     const menuVisibleToggle = new VisibleToggle(menu);
     const menuSlideToggle = new RightSlideToggle(menu);
-    const toggleButton = document.querySelector('.header-section__button')
-    const toggleButtonClose = document.querySelector('.header-section__button_close')
+
 
     if (!menu || !toggleButton || !blackOut) {
       console.error("Menu, toggle button, or blackout element not found.");
       return;
     }
-  
+
+    const inertToggle = {
+      logoAndButton: document.querySelector('.header-section__wrapper'),
+      main: document.querySelector('main'),
+      footer: document.querySelector('footer'),
+      
+      on: function () {
+        if (!this.logoAndButton || !this.main || !this.footer) {
+          console.error('logo, main or footer not found.')
+          return;
+        }
+        this.logoAndButton.inert = true;
+        this.main.inert = true;
+        this.footer.inert = true;
+      },
+      off: function () {
+        if (!this.logoAndButton || !this.main || !this.footer) {
+          console.error('logo, main or footer not found.')
+          return;
+        }
+        this.logoAndButton.inert = false;
+        this.main.inert = false;
+        this.footer.inert = false;      }
+    }
+
     function menuSlide(checkboxElement) {
       if (checkboxElement) {
         menuVisibleToggle.displayFlex();
         menuSlideToggle.slideIn();
         blackOutToggle.displayBlockOpacity1();
+        inertToggle.on()
       } else {
         menuVisibleToggle.displayNoneTimeOut350();
         menuSlideToggle.slideOut();
         blackOutToggle.displayNoneOpacity0();
+        inertToggle.off()
       }
     }
 
@@ -225,11 +253,15 @@ $(document).ready(function () {
     })
 
     blackOut.addEventListener("click", () => {
-      blackOutToggle.displayNoneOpacity0();
-      menuSlideToggle.slideOut();
       checkbox.checked = !checkbox.checked;
+      menuSlide(checkbox.checked)
     });
-    
+
+    menuItem.forEach(item => item.addEventListener('click', () => {
+      checkbox.checked = !checkbox.checked
+      menuSlide(checkbox.checked)
+    }))
+
   }
 
   makeDropdown();

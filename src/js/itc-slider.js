@@ -342,44 +342,44 @@ class ItcSlider {
       }
     });
 
-    const indicators = document.querySelectorAll('.itc-slider__indicator');
-// Присваиваем каждому индикатору разный цвет для класса .itc-slider__indicator_active
-    indicators.forEach(indicator => {
-        // Получаем значение атрибута data-slide-to
-        const slideTo = indicator.getAttribute('data-slide-to');
+//     const indicators = document.querySelectorAll('.itc-slider__indicator');
+// // Присваиваем каждому индикатору разный цвет для класса .itc-slider__indicator_active
+//     indicators.forEach(indicator => {
+//         // Получаем значение атрибута data-slide-to
+//         const slideTo = indicator.getAttribute('data-slide-to');
 
-        // Определяем цвет в зависимости от значения data-slide-to
-        let color;
-        switch (slideTo) {
-            case '0':
-                color = 'linear-gradient(60deg, #FAD0C4 0%, #FBC2EB 100%)'; // Красный цвет для slide-to="0"
-                break;
-            case '1':
-                color = 'linear-gradient(180deg, #91C0CC 0%, #DDE7E8 100%)'; // Зеленый цвет для slide-to="1"
-                break;
-            case '2':
-                color = 'linear-gradient(180deg, #F6E6C5 0%, #ECBEB6 47%, #A5ADE2 100%)'; // Синий цвет для slide-to="2"
-                break;
-            case '3':
-                color = 'linear-gradient(180deg, #FDF0C6 0%, #7F9AAC 100%)'; // Синий цвет для slide-to="2"
-                break;
-            case '4':
-                color = 'linear-gradient(180deg, #FE0018 0%, #81040F 100%)'; // Синий цвет для slide-to="2"
-                break;
-            // Добавьте другие случаи по мере необходимости
-            default:
-                color = '#FFFFFF'; // Белый цвет по умолчанию
-        }
+//         // Определяем цвет в зависимости от значения data-slide-to
+//         let color;
+//         switch (slideTo) {
+//             case '0':
+//                 color = 'linear-gradient(60deg, #FAD0C4 0%, #FBC2EB 100%)'; // Красный цвет для slide-to="0"
+//                 break;
+//             case '1':
+//                 color = 'linear-gradient(180deg, #91C0CC 0%, #DDE7E8 100%)'; // Зеленый цвет для slide-to="1"
+//                 break;
+//             case '2':
+//                 color = 'linear-gradient(180deg, #F6E6C5 0%, #ECBEB6 47%, #A5ADE2 100%)'; // Синий цвет для slide-to="2"
+//                 break;
+//             case '3':
+//                 color = 'linear-gradient(180deg, #FDF0C6 0%, #7F9AAC 100%)'; // Синий цвет для slide-to="2"
+//                 break;
+//             case '4':
+//                 color = 'linear-gradient(180deg, #FE0018 0%, #81040F 100%)'; // Синий цвет для slide-to="2"
+//                 break;
+//             // Добавьте другие случаи по мере необходимости
+//             default:
+//                 color = '#FFFFFF'; // Белый цвет по умолчанию
+//         }
 
-        // Присваиваем цвет для активного индикатора
-        const style = document.createElement('style');
-        style.innerHTML = `
-            .itc-slider__indicator_active[data-slide-to="${slideTo}"] {
-                background: ${color};
-            }
-        `;
-        document.head.appendChild(style);
-    });
+//         // Присваиваем цвет для активного индикатора
+//         const style = document.createElement('style');
+//         style.innerHTML = `
+//             .itc-slider__indicator_active[data-slide-to="${slideTo}"] {
+//                 background: ${color};
+//             }
+//         `;
+//         document.head.appendChild(style);
+//     });
   }
 
   #move() {
