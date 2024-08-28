@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Разрабатываю сайты. Стильно, доступно, понятно.">
     <title>Zabekin Studio Design</title>
     <link rel="icon" href="./icons/favicon_32x32.ico" sizes="32x32" />
     <link rel="icon" href="./icons/favicon_16x16.svg" type="image/svg+xml" />
@@ -11,7 +12,7 @@
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
   </head>
 
   <body>
@@ -20,12 +21,12 @@
         <div class="header-section__wrapper">
           <a href="/" id="mainLogo"><img src="./icons/ZBS-design-logo.svg" alt="Логотип"/></a>
           <input type="checkbox" class="header-section__toggle" id="header-toggle"/>
-          <label for="header-toggle" class="header-section__button" tabindex="0">
+          <label for="header-toggle" class="header-section__button" tabindex="0" aria-label="Открыть меню">
             <span class="header-section__icon"></span>
           </label>
         </div>
         <nav class="header-section__nav" id="menu">
-          <label for="header-toggle" class="header-section__button_close" tabindex="0">
+          <label for="header-toggle" class="header-section__button_close" tabindex="0" aria-label="Закрыть меню">
             <span class="header-section__icon_close"></span>
           </label>
           <ul class="header-section__list">
@@ -61,12 +62,12 @@
             <div class="offer-section__offer">
               <div class="offer-section__left-side">
                 <p>Создаю сайты.<br />Стильно. Доступно.<br />Понятно.</p>
-                <a href="https://t.me/zabekin" class="primary-button" target="_blank">Обсудить проект</a>
+                <a href="https://t.me/zabekin" class="primary-button" target="_blank" aria-label="Обсудить проект">Обсудить проект</a>
               </div>
               <div class="offer-section__social">
                 <div class="social-icon">
-                  <a href="https://t.me/zabekin" target="_blank"><img src="./icons/telegram.svg" alt="иконка телеграмм" class="social-icon__item" /></a>
-                  <a href="mailto:zabekin.nikita@gmail.com?subject=Заказ услуги ZBS design"><img src="./icons/mail.svg" alt="" class="social-icon__item" /></a>
+                  <a href="https://t.me/zabekin" target="_blank"><img src="./icons/telegram.svg" alt="иконка телеграмм" aria-label="Написать в Telegram" class="social-icon__item" /></a>
+                  <a href="mailto:zabekin.nikita@gmail.com?subject=Заказ услуги ZBS design"><img src="./icons/mail.svg" alt="иконка почты" aria-label="Отправить письмо на почту" class="social-icon__item" /></a>
                 </div>
               </div>
             </div>
@@ -79,7 +80,7 @@
           <h2 class="main-title m-b-6">Проекты</h2>
 
           <div class="itc-slider itc-slider-1" data-slider="itc-slider" data-loop="true">
-            <button class="itc-slider__btn itc-slider__btn_prev"></button>
+            <button class="itc-slider__btn itc-slider__btn_prev" aria-label="Назад"></button>
             <div class="itc-slider__wrapper">
               <div class="itc-slider__items">
                 <div class="itc-slider__item">
@@ -89,8 +90,8 @@
                   </div>
                   <a href="https://mi-life.ru/promo/10_2024/" class="itc-slider__image-wrapper" target="_blank">
                     <picture class="itc-slider__image">
-                      <source srcset="./img/10k.min.webp" media="(min-width: 1200px)" type="image/webp"/>
-                      <source srcset="./img/10k.min.png" media="(min-width: 1200px)" type="image/png"/>
+                      <source srcset="./img/10k.min.webp" type="image/webp"/>
+                      <source srcset="./img/10k.min.png" type="image/png"/>
                       <img src="./img/10k.min.png" alt="Изображение сайта" loading="lazy"/>
                     </picture>
                   </a>
@@ -188,7 +189,7 @@
                 </div>
               </div>
             </div>
-            <button class="itc-slider__btn itc-slider__btn_next"></button>
+            <button class="itc-slider__btn itc-slider__btn_next" aria-label="Вперёд"></button>
           </div>
         </div>
       </section>
@@ -465,8 +466,8 @@
                     </div>
                   </div>
                   <picture id="itc-slider" class="itc-slider__img">
-                    <source src="./img/bust.min.webp" type="image/webp" />
-                    <source src="./img/bust.min.png" type="image/png" />
+                    <source srcset="./img/bust.min.webp" type="image/webp" />
+                    <source srcset="./img/bust.min.png" type="image/png" />
                     <img src="./img/bust.min.png" alt="Бюст девушки" loading="lazy" />
                   </picture>
                 </div>
@@ -482,8 +483,8 @@
                     </div>
                   </div>
                   <picture class="itc-slider__img">
-                    <source src="./img/mountain.min.webp" type="image/webp" />
-                    <source src="./img/mountain.min.png" type="image/png" />
+                    <source srcset="./img/mountain.min.webp" type="image/webp" />
+                    <source srcset="./img/mountain.min.png" type="image/png" />
                     <img src="./img/mountain.min.png" alt="Изображение гор" loading="lazy" />
                   </picture>
                   <!-- Контент 2 слайда -->
@@ -498,9 +499,9 @@
                     </div>
                   </div>
                   <picture class="itc-slider__img">
-                    <source src="./img/busido.min.webp" type="image/webp"/>
-                    <source src="./img/busido.min.png" type="image/png"/>
-                    <img src="./img/busido.min.png" loading="lazy" />
+                    <source srcset="./img/busido.min.webp" type="image/webp"/>
+                    <source srcset="./img/busido.min.png" type="image/png"/>
+                    <img src="./img/busido.min.png" alt="Иероглифы" loading="lazy" />
                   </picture>
                 </div>
                 <!-- Контент 3 слайда -->
@@ -514,8 +515,8 @@
                     </div>
                   </div>
                   <picture class="itc-slider__img">
-                    <source src="./img/human.min.webp" type="image/webp"/>
-                    <source src="./img/human.min.png" type="image/png"/>
+                    <source srcset="./img/human.min.webp" type="image/webp"/>
+                    <source srcset="./img/human.min.png" type="image/png"/>
                     <img src="./img/human.min.png" alt="Картина с людьми рабочих профессий" loading="lazy" />
                   </picture>
                 </div>
@@ -534,8 +535,8 @@
                     </div>
                   </div>
                   <picture class="itc-slider__img">
-                    <source src="./img/samurai.min.webp" type="image/webp"/>
-                    <source src="./img/samurai.min.png" type="image/png"/>
+                    <source srcset="./img/samurai.min.webp" type="image/webp"/>
+                    <source srcset="./img/samurai.min.png" type="image/png"/>
                     <img src="./img/samurai.min.png" alt="Изображение самурая" loading="lazy" />
                   </picture>
                 </div>
@@ -726,8 +727,8 @@
           <p class="footer-section__item">&copy;&nbsp;2024 Все&nbsp;права защищены.</p>
           <div class="footer-section__social">
             <div class="social-icon">
-              <a href=""><img src="./icons/telegram.svg" alt="" class="social-icon__item" /></a>
-              <a href=""><img src="./icons/mail.svg" alt="" class="social-icon__item" /></a>
+              <a href=""><img src="./icons/telegram.svg" alt="иконка telegram" aria-label="Написать в Telegram" class="social-icon__item" /></a>
+              <a href=""><img src="./icons/mail.svg" alt="иконка почты" aria-label="Отправить письмо на почту" class="social-icon__item" /></a>
             </div>
           </div>
         </div>
@@ -739,9 +740,15 @@
     <div class="effect"></div>
     <div class="bg">
       <picture>
-        <source src="./img/bg.min.webp" type="image/webp">
-        <source src="./img/bg.min.png" type="image/png">
-        <img src="./img/bg.min.png" alt="Фон">
+        <source srcset="./img/bg__mob.min.webp" type="image/webp" media="(max-width: 575.98px)">
+        <source srcset="./img/bg__small.min.webp" type="image/webp" media="(max-width: 991.98px)">
+        <source srcset="./img/bg__medium.min.webp" type="image/webp" media="(max-width: 1920.98px)">
+        <source srcset="./img/bg__large.min.webp" type="image/webp" media="(min-width: 2500px)">
+        <source srcset="./img/bg__mob.min.png" type="image/png" media="(max-width: 575.98px)">
+        <source srcset="./img/bg__small.min.png" type="image/png" media="(max-width: 991.98px)">
+        <source srcset="./img/bg__medium.min.png" type="image/png" media="(max-width: 1920.98px)">
+        <source srcset="./img/bg__large.min.png" type="image/png" media="(min-width: 2500px)">
+        <img src="./img/bg__medium.min.png" alt="Фон">
       </picture>
     </div>
   </body>

@@ -14,7 +14,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"), // Путь для выходного файла сборки
     clean: true, // Очищает папку dist перед новой сборкой
   },
-
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -128,7 +128,7 @@ module.exports = {
     //       options: {
     //         plugins: [["imagemin-webp", { quality: 100 }]],
     //       },
-    //       // filename: "./img/[name].webp", // Имя файла для WebP в выходной папке
+    //       filename: "img/[name].webp", // Имя файла для WebP в выходной папке
     //     },
     //   ],
     // }),
