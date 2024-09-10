@@ -39,6 +39,10 @@
         position: absolute
         top: 2rem
         right: 4rem
+        @include respond (xs)
+            top: 4rem
+            right: 2rem
+
 
     &__icon
         position: relative
@@ -113,6 +117,8 @@
         background-color: black
         z-index: 100
         box-shadow: 0 0 0 4px rgba(0, 0, 0, 1)
+        @include respond(xs)
+            width: 70%
     &__list
         display: flex
         gap: 2rem

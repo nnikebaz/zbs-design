@@ -1,10 +1,21 @@
 .footer-section
     background-color: black
     padding: 10rem
+    @include respond(xs)
+        padding: 4rem
     &__wrapper
         display: flex
         align-items: center
         justify-content: space-between
+        @include respond(xs)
+            flex-direction: column
+            gap: 2rem
     &__item
         font-size: 1.2rem
         font-weight: 200
+    &__item:nth-child(2)
+        @include respond(xs)
+            order: 2
+        
+
+        

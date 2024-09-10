@@ -19,8 +19,9 @@
         @media screen and ( max-width:  1399.98px)
             @content
 
-@mixin fluid-text($min, $max)
-    font-size: clamp(#{$min}rem, #{calc($max / 120 * 100)}vw, #{$max}rem)
+@mixin fluid-text-rem($min, $max)
+    font-size: clamp(#{$min}rem, #{calc($max / 80 * 100)}vw, #{$max}rem)
+
 
 @mixin flex-center($isInline: false)
     @if $isInline

@@ -11,6 +11,62 @@
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/sass/style.sass ***!
   \**************************************************************************************************************/
 @charset "UTF-8";
+@font-face {
+  font-family: "Unbounded";
+  src: local("Unbounded Black"), local("Unbounded-Black"), url(../fonts/subset-Unbounded-Black.eot), url(../fonts/subset-Unbounded-Black.eot?#iefix) format("embedded-opentype"), url(../fonts/subset-Unbounded-Black.woff2) format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-faceF {
+  font-family: "Unbounded";
+  src: local("Unbounded ExtraBold"), local("Unbounded-ExtraBold"), url(../fonts/subset-Unbounded-ExtraBold.eot), url(../fonts/subset-Unbounded-ExtraBold.eot?#iefix) format("embedded-opentype"), url(../fonts/subset-Unbounded-ExtraBold.woff2) format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Unbounded";
+  src: local("Unbounded Bold"), local("Unbounded-Bold"), url(../fonts/subset-Unbounded-Bold.eot), url(../fonts/subset-Unbounded-Bold.eot?#iefix) format("embedded-opentype"), url(../fonts/subset-Unbounded-Bold.woff2) format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Unbounded";
+  src: local("Unbounded Regular"), local("Unbounded-Regular"), url(../fonts/subset-Unbounded-Regular.eot), url(../fonts/subset-Unbounded-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/subset-Unbounded-Regular.woff2) format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Unbounded";
+  src: local("Unbounded Medium"), local("Unbounded-Medium"), url(../fonts/subset-Unbounded-Medium.eot), url(../fonts/subset-Unbounded-Medium.eot?#iefix) format("embedded-opentype"), url(../fonts/subset-Unbounded-Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Unbounded";
+  src: local("Unbounded ExtraLight"), local("Unbounded-ExtraLight"), url(../fonts/subset-Unbounded-ExtraLight.eot), url(../fonts/subset-Unbounded-ExtraLight.eot?#iefix) format("embedded-opentype"), url(../fonts/subset-Unbounded-ExtraLight.woff2) format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Unbounded";
+  src: local("Unbounded Light"), local("Unbounded-Light"), url(../fonts/subset-Unbounded-Light.eot), url(../fonts/subset-Unbounded-Light.eot?#iefix) format("embedded-opentype"), url(../fonts/subset-Unbounded-Light.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Unbounded";
+  src: local("Unbounded SemiBold"), local("Unbounded-SemiBold"), url(../fonts/subset-Unbounded-SemiBold.eot), url(../fonts/subset-Unbounded-SemiBold.eot?#iefix) format("embedded-opentype"), url(../fonts/subset-Unbounded-SemiBold.woff2) format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
 *, ::after, ::before, p {
   margin: 0;
   padding: 0;
@@ -50,7 +106,6 @@ body {
   font-style: normal;
   position: relative;
   background: unset;
-  height: 100%;
 }
 
 :focus-visible {
@@ -232,7 +287,7 @@ a, li, ol {
   display: flex;
   align-items: center;
   height: fit-content;
-  font-size: clamp(1.6rem, 1.5vw, 1.8rem);
+  font-size: clamp(1.6rem, 2.25vw, 1.8rem);
   padding: 2rem 2rem;
   color: #000;
   background-color: #fff;
@@ -499,7 +554,7 @@ textarea.form-control {
   text-align: center;
   padding: 0 2rem;
 }
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 767.98px) {
   .itc-slider-1 .itc-slider__item {
     flex: 0 0 100%;
     max-width: 100%;
@@ -930,14 +985,30 @@ textarea.form-control {
   background-color: black;
   padding: 10rem;
 }
+@media screen and (max-width: 575.98px) {
+  .footer-section {
+    padding: 4rem;
+  }
+}
 .footer-section__wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+@media screen and (max-width: 575.98px) {
+  .footer-section__wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
 .footer-section__item {
   font-size: 1.2rem;
   font-weight: 200;
+}
+@media screen and (max-width: 575.98px) {
+  .footer-section__item:nth-child(2) {
+    order: 2;
+  }
 }
 
 @media screen and (max-width: 575.98px) {
@@ -987,6 +1058,12 @@ textarea.form-control {
   position: absolute;
   top: 2rem;
   right: 4rem;
+}
+@media screen and (max-width: 575.98px) {
+  .header-section__button_close {
+    top: 4rem;
+    right: 2rem;
+  }
 }
 .header-section__icon {
   position: relative;
@@ -1056,6 +1133,11 @@ textarea.form-control {
   z-index: 100;
   box-shadow: 0 0 0 4px rgb(0, 0, 0);
 }
+@media screen and (max-width: 575.98px) {
+  .header-section__nav {
+    width: 70%;
+  }
+}
 .header-section__list {
   display: flex;
   gap: 2rem;
@@ -1085,7 +1167,7 @@ textarea.form-control {
   width: 100%;
 }
 .offer-section p {
-  font-size: clamp(1.2rem, 2vw, 2.4rem);
+  font-size: clamp(1.2rem, 3vw, 2.4rem);
 }
 .offer-section__wrapper {
   display: flex;
@@ -1099,11 +1181,11 @@ textarea.form-control {
   max-width: 68rem;
 }
 .offer-section__title {
-  font-size: clamp(6.4rem, 10.4166666667vw, 12.5rem);
+  font-size: clamp(5.8rem, 15.625vw, 12.5rem);
   margin-bottom: 3rem;
 }
 .offer-section__title span {
-  font-size: clamp(5.2rem, 8.4916666667vw, 10.19rem);
+  font-size: clamp(4.8rem, 12.7375vw, 10.19rem);
   font-weight: 400;
 }
 .offer-section__photo {
@@ -1124,7 +1206,7 @@ textarea.form-control {
 }
 .offer-section__about-me span {
   font-weight: 600;
-  font-size: clamp(1.7rem, 2.1666666667vw, 2.6rem);
+  font-size: clamp(1.7rem, 3.25vw, 2.6rem);
 }
 .offer-section__about-me p {
   font-weight: 200;

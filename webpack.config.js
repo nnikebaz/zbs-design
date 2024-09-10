@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const loader = require("sass-loader");
 const { sources } = require("webpack");
+const { name } = require("browser-sync");
 
 module.exports = {
   entry: "./src/index.js", // Основная точка входа для JavaScript
@@ -17,6 +18,13 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/[name][ext]", 
+        },
+      },
       {
         test: /\.webmanifest$/, // Указываем расширение файла
         type: "asset/resource", // Обрабатываем файл как ресурс (то есть он просто копируется в выходную папку)
